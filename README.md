@@ -57,6 +57,8 @@ Credits
 Author: Andrey 'lolmaus' Mikhaylov
 E-mail: lolmaus@gmail.com
 
+Sponsored by [Hivemind](http://hiveminded.net/).
+
 Based on [jquery.draghover.js](https://gist.github.com/meleyal/3794126) by William Meleyal (william.meleyal@gmail.com).
 
 Inspired by [jquery.event.dragout](https://github.com/dancork/jquery.event.dragout) by Dan Cork ([Firstname].[Lastname]@kickinteractive.net).
