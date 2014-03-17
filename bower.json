@@ -1,0 +1,28 @@
+{
+  "name": "jquery.dragbetter",
+  "version": "0.1.0",
+  "homepage": "https://github.com/lolmaus/jquery.dragbetter",
+  "author": ["Andrey Mikhaylov aka lolmaus <lolmaus@gmail.com>"],
+  "description": "A no-bullshit solution for `dragenter` and `dragleave` events that behave like `mouseenter` and `mouseleave`, not `mousein` and `mouseout`.",
+  "main": "jquery.dragbetter.js",
+  "keywords": [
+    "jquery.dragbetter",
+    "jquery-dragbetter",
+    "dragbetter",
+    "dragenter",
+    "dragleave",
+    "dragbetterenter",
+    "dragbetterleave",
+    "drag",
+    "dragdrop",
+    "dragndrop",
+    "drag-n-drop",
+    "drag-and-drop",
+    "event",
+    "events"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
