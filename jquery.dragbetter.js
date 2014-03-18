@@ -1,5 +1,5 @@
 /*
- * jquery.dragbetter 0.1.0
+ * jquery.dragbetter 0.1.2
  *
  * Author: Andrey Mikhaylov aka lolmaus
  * Email: lolmaus@gmail.com
@@ -16,9 +16,11 @@
 
 ;(function($){
 
+  "use strict";
+
   $.event.special.dragbetterenter = {
 
-    setup: function( data, namespaces, eventHandle ) {
+    setup: function() {
 
       var
         self = this,
@@ -35,13 +37,13 @@
         self.dragbetterCollection.push(event.target);
       });
 
-      $self.on('drop.dragbetterenter', function (event) {
+      $self.on('drop.dragbetterenter', function () {
         self.dragbetterCollection = [];
         $self.triggerHandler('dragbetterleave');
       });
     },
 
-    teardown: function( namespaces ) {
+    teardown: function() {
       $(this).off('dragenter.dragbetterenter');
     }
 
@@ -49,7 +51,7 @@
 
   $.event.special.dragbetterleave = {
 
-    setup: function( data, namespaces, eventHandle ) {
+    setup: function() {
 
       if (!this.dragbetterCollection)
         throw "Triggered dragbetterleave without dragbetterenter. Do you listen to dragbetterenter?";
@@ -65,7 +67,7 @@
         // fires AFTER the enter event on the next element.
         setTimeout(function() {
 
-          currentElementIndex = self.dragbetterCollection.indexOf(event.target);
+          var currentElementIndex = self.dragbetterCollection.indexOf(event.target);
           if (currentElementIndex > -1)
             self.dragbetterCollection.splice(currentElementIndex, 1);
 
@@ -76,7 +78,7 @@
       });
     },
 
-    teardown: function( namespaces ) {
+    teardown: function() {
       $(this).off('dragleave.dragbetterleave');
     }
 

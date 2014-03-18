@@ -1,6 +1,15 @@
 # jquery.dragbetter Changelog
 
 
+## v0.1.2
+
+**2014-03-18**
+
+* Proper version bump.
+* Code cleaned up with JSHint.
+* Fixed the `authors` section name in `bower.json`.
+
+
 ## v0.1.1
 
 **2014-03-18**
