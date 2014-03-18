@@ -24,20 +24,19 @@
         self = this,
         $self = $(self);
 
-      self.$dragbetterCollection = $();
+      self.dragbetterCollection = [];
 
       $self.on('dragenter.dragbetterenter', function (event) {
 
-        if (self.$dragbetterCollection.length === 0) {
+        if (self.dragbetterCollection.length === 0) {
           $self.triggerHandler('dragbetterenter');
         }
 
-        self.$dragbetterCollection =
-          self.$dragbetterCollection.add(event.target);
+        self.dragbetterCollection.push(event.target);
       });
 
       $self.on('drop.dragbetterenter', function (event) {
-        self.$dragbetterCollection = $();
+        self.dragbetterCollection = [];
         $self.triggerHandler('dragbetterleave');
       });
     },
@@ -52,12 +51,13 @@
 
     setup: function( data, namespaces, eventHandle ) {
 
-      if (!this.$dragbetterCollection)
+      if (!this.dragbetterCollection)
         throw "Triggered dragbetterleave without dragbetterenter. Do you listen to dragbetterenter?";
 
       var
         self = this,
         $self = $(self);
+
 
       $self.on('dragleave.dragbetterleave', function (event) {
 
@@ -65,10 +65,11 @@
         // fires AFTER the enter event on the next element.
         setTimeout(function() {
 
-          self.$dragbetterCollection =
-            self.$dragbetterCollection.not(event.target);
+          currentElementIndex = self.dragbetterCollection.indexOf(event.target);
+          if (currentElementIndex > -1)
+            self.dragbetterCollection.splice(currentElementIndex, 1);
 
-          if (self.$dragbetterCollection.length === 0) {
+          if (self.dragbetterCollection.length === 0) {
             $self.triggerHandler('dragbetterleave');
           }
         }, 1);
