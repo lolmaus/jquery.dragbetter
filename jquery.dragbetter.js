@@ -28,7 +28,7 @@
 
       $self.on('dragenter.dragbetterenter', function (event) {
 
-        if (self.$dragbetterCollection.size() === 0) {
+        if (self.$dragbetterCollection.length === 0) {
           $self.triggerHandler('dragbetterenter');
         }
 
@@ -68,7 +68,7 @@
           self.$dragbetterCollection =
             self.$dragbetterCollection.not(event.target);
 
-          if (self.$dragbetterCollection.size() === 0) {
+          if (self.$dragbetterCollection.length === 0) {
             $self.triggerHandler('dragbetterleave');
           }
         }, 1);
