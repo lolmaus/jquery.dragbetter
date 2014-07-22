@@ -37,7 +37,7 @@
         self.dragbetterCollection.push(event.target);
       });
 
-      $self.on('drop.dragbetterenter', function () {
+      $self.on('drop.dragbetterenter dragend.dragbetterenter', function () {
         self.dragbetterCollection = [];
         $self.triggerHandler('dragbetterleave');
       });
