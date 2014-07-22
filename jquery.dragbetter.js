@@ -44,7 +44,7 @@
     },
 
     teardown: function() {
-      $(this).off('dragenter.dragbetterenter');
+      $(this).off('.dragbetterenter');
     }
 
   };
@@ -79,7 +79,7 @@
     },
 
     teardown: function() {
-      $(this).off('dragleave.dragbetterleave');
+      $(this).off('.dragbetterleave');
     }
 
   };
