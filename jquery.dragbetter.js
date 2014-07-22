@@ -1,5 +1,5 @@
 /*
- * jquery.dragbetter 0.1.2
+ * jquery.dragbetter 0.1.3
  *
  * Author: Andrey Mikhaylov aka lolmaus
  * Email: lolmaus@gmail.com

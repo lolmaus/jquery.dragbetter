@@ -1,6 +1,11 @@
 # jquery.dragbetter Changelog
 
 
+## v0.1.3
+
+* Proper events teardown by [peyerluk](https://github.com/peyerluk).
+
+
 ## v0.1.2
 
 **2014-03-18**
