@@ -37,14 +37,14 @@
         self.dragbetterCollection.push(event.target);
       });
 
-      $self.on('drop.dragbetterenter', function () {
+      $self.on('drop.dragbetterenter dragend.dragbetterenter', function () {
         self.dragbetterCollection = [];
         $self.triggerHandler('dragbetterleave');
       });
     },
 
     teardown: function() {
-      $(this).off('dragenter.dragbetterenter');
+      $(this).off('.dragbetterenter');
     }
 
   };
@@ -79,7 +79,7 @@
     },
 
     teardown: function() {
-      $(this).off('dragleave.dragbetterleave');
+      $(this).off('.dragbetterleave');
     }
 
   };
