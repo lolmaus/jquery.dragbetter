@@ -41,6 +41,12 @@ How to use
   ```
 
   Don't forget to either include this code after your HTML or wrap it with `$(document).ready( function () { /*...*/ });`.
+  
+
+Demo
+----
+
+Here's a simple demonstration: http://jsbin.com/xexub/1/edit?html,css,js,output
 
 
 Things to keep in mind
