@@ -31,15 +31,15 @@
       $self.on('dragenter.dragbetterenter', function (event) {
 
         if (self.dragbetterCollection.length === 0) {
-          $self.triggerHandler('dragbetterenter');
+          $self.triggerHandler({type: 'dragbetterenter', originalEvent: event.originalEvent || event});
         }
 
         self.dragbetterCollection.push(event.target);
       });
 
-      $self.on('drop.dragbetterenter dragend.dragbetterenter', function () {
+      $self.on('drop.dragbetterenter dragend.dragbetterenter', function (event) {
         self.dragbetterCollection = [];
-        $self.triggerHandler('dragbetterleave');
+        $self.triggerHandler({type:'dragbetterleave', originalEvent: event.originalEvent || event});
       });
     },
 
@@ -72,7 +72,7 @@
             self.dragbetterCollection.splice(currentElementIndex, 1);
 
           if (self.dragbetterCollection.length === 0) {
-            $self.triggerHandler('dragbetterleave');
+            $self.triggerHandler({type:'dragbetterleave', originalEvent: event.originalEvent || event});
           }
         }, 1);
       });
